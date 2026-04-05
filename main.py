@@ -10,13 +10,7 @@ CATEGORIES_PATH = os.path.join(os.path.dirname(__file__), "categories.json")
 
 print(f"Database path: {DB_PATH}")
 
-# mcp = FastMCP("ExpenseTracker")
-from fastmcp.server.auth.providers.debug import DebugTokenVerifier
-
-mcp = FastMCP(
-    "ExpenseTracker",
-    token_verifier=DebugTokenVerifier()
-)
+mcp = FastMCP("ExpenseTracker")
 
 def init_db():  # Keep as sync for initialization
     try:
